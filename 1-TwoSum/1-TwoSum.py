@@ -1,14 +1,17 @@
-# Last updated: 5/10/2026, 9:24:52 PM
-1class Solution:
-2    def isPalindrome(self, x: int) -> bool:
-3        x = str(x)
-4        left = 0
-5        right = len(x)-1
-6
-7        while left < len(x)//2:
-8            if x[left] == x[right]:
-9                left += 1
-10                right -= 1
-11            else:
-12                return False
-13        return True
+# Last updated: 5/11/2026, 7:28:36 PM
+1# Definition for singly-linked list.
+2# class ListNode:
+3#     def __init__(self, val=0, next=None):
+4#         self.val = val
+5#         self.next = next
+6class Solution:
+7    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+8        prev, curr = None, head
+9
+10        while curr:
+11            nxt = curr.next
+12            curr.next = prev
+13            prev = curr
+14            curr = nxt
+15        return prev
+16        
