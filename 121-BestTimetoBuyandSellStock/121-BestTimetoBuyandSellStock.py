@@ -1,4 +1,4 @@
-# Last updated: 5/26/2026, 10:03:54 AM
+# Last updated: 5/26/2026, 10:07:08 AM
 1class Solution:
 2    def maxProfit(self, prices: List[int]) -> int:
 3        # Base Case:
