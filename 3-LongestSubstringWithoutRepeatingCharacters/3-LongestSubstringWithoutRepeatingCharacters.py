@@ -1,4 +1,4 @@
-# Last updated: 5/7/2026, 11:15:53 PM
+# Last updated: 7/30/2026, 3:50:02 PM
 1class Solution:
 2    def lengthOfLongestSubstring(self, s: str) -> int:
 3        charSet = set()
