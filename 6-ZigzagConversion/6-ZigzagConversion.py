@@ -1,14 +1,14 @@
-# Last updated: 4/12/2026, 10:23:20 PM
-class Solution:
-    def convert(self, s: str, numRows: int) -> str:
-        if numRows == 1: return s
-
-        res = ""
-        for r in range(numRows):
-            increment = 2 * (numRows - 1)
-            for i in range(r, len(s), increment):
-                res += s[i]
-                if (r > 0 and r < numRows - 1 and i + increment - 2 * r < len(s)):
-                    res += s[i + increment - 2 * r]
-
-        return res
+# Last updated: 7/30/2026, 3:51:34 PM
+1class Solution:
+2    def convert(self, s: str, numRows: int) -> str:
+3        if numRows == 1: return s
+4
+5        res = ""
+6        for r in range(numRows):
+7            increment = 2 * (numRows - 1)
+8            for i in range(r, len(s), increment):
+9                res += s[i]
+10                if (r > 0 and r < numRows - 1 and i + increment - 2 * r < len(s)):
+11                    res += s[i + increment - 2 * r]
+12
+13        return res
