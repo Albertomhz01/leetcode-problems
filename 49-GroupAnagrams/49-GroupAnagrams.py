@@ -1,22 +1,18 @@
-# Last updated: 7/30/2026, 8:51:00 AM
+# Last updated: 7/30/2026, 9:15:01 AM
 1class Solution:
 2    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
 3        map = {}
-4        pre_map = set()
+4        idx = 0
 5
 6        for s in strs:
-7            pre_map.add(
-8                "".join(sorted(s))
-9            )
-10        
-11        for idx, val in enumerate(pre_map):
-12            map[val] = idx
+7            key = "".join(sorted(s))
+8            if key not in map:
+9                map[key] = idx
+10                idx += 1
+11
+12        flast_list = [[] for _ in range(len(map))]
 13
-14        flast_list = [[] for _ in range(len(map.keys()))]
-15
-16        for s in strs: 
-17            if "".join(sorted(s)) in map.keys(): 
-18                flast_list[map["".join(sorted(s))]].append(s)
-19        
-20        return flast_list
-21            
+14        for s in strs:
+15            flast_list[map["".join(sorted(s))]].append(s)
+16
+17        return flast_list            
