@@ -1,4 +1,4 @@
-# Last updated: 8/3/2026, 5:01:49 PM
+# Last updated: 8/3/2026, 5:02:16 PM
 1# Definition for a binary tree node.
 2# class TreeNode:
 3#     def __init__(self, val=0, left=None, right=None):
@@ -6,16 +6,14 @@
 5#         self.left = left
 6#         self.right = right
 7class Solution:
-8    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
-9        def DFS(left_root, right_root):
-10            if not left_root and not right_root:
-11                return True
-12            if not left_root or not right_root:
-13                return False
-14            if left_root.val == right_root.val:
-15                return DFS(left_root.left, right_root.right) and DFS(left_root.right, right_root.left)
-16            else:
-17                return False
-18            
-19        return DFS(root.left, root.right)
-20        
+8    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+9        if not p and not q:
+10            return True
+11        if not p or not q:
+12            return False
+13        if p.val != q.val:
+14            return False
+15
+16        return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+17            
+18        
